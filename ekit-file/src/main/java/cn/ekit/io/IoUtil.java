@@ -1,4 +1,4 @@
-package cn.ekit.io.util;
+package cn.ekit.io;
 
 import java.io.Closeable;
 import java.io.IOException;

@@ -1,7 +1,7 @@
-package cn.ekit.file.util;
+package cn.ekit.file;
 
 
-import cn.ekit.io.util.IoUtil;
+import cn.ekit.io.IoUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.ByteArrayOutputStream;
