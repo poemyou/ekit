@@ -9,10 +9,10 @@
     <artifactId>ekit-parent</artifactId>
     <version>0.0.1</version>
     <modules>
-        <module>ekit-file</module>
+        <module>ekit</module>
     </modules>
     <packaging>pom</packaging>
-    <name>ekit</name>
+    <name>ekit-parent</name>
     <description>a java software kit to help you work more efficient</description>
     <url>https://github.com/poemyou/ekit</url>
 
