@@ -20,4 +20,8 @@ public class IoUtil {
             e.printStackTrace();
         }
     }
+
+    public static void f(){
+        
+    }
 }
