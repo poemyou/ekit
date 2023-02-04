@@ -16,20 +16,7 @@ public class SerialNoUtil {
 
     private static final SecureRandom secureRandom = new SecureRandom();
 
-    enum SNT {
-        /**
-         * 测试
-         */
-        N1("001");
-
-        private final String prefix;
-
-        SNT(String prefix) {
-            this.prefix = prefix;
-        }
-    }
-
-    public static String getSerialNo(SNT snt) {
+    public static String getSerialNo(String prefix) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyMMdd");
         LocalDateTime now = LocalDateTime.now();
         String format = dtf.format(now);
@@ -37,7 +24,7 @@ public class SerialNoUtil {
         int second = now.getHour() * 3600 + now.getMinute() * 60 + now.getSecond();
         // 加个随机数
         int randomInt = secureRandom.nextInt(1000);
-        String no = String.format("%s%s%05d%03d", snt.prefix, format, second, randomInt);
+        String no = String.format("%s%s%05d%03d", prefix, format, second, randomInt);
         System.out.println(no);
         return no;
     }
@@ -46,7 +33,7 @@ public class SerialNoUtil {
 
         for (int i = 0; i < 1000; ++i) {
             AsyncUtil.submit(() -> {
-                getSerialNo(SNT.N1);
+                getSerialNo("001");
             });
         }
         AsyncUtil.shutdown();
